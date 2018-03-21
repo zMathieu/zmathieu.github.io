@@ -90,10 +90,11 @@ $("#geolocation").click(function (event) {
 });
 
 function getMeteoByCity(city, callback){
+    proxy = "https://cors-anywhere.herokuapp.com/"
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=" + API_KEY,
+        url: proxy + "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=" + API_KEY,
         headers: {
-            'Access-Control-Allow-Origin': '*'
+            "x-requested-with": "xhr"
         },
         success: function(data){
             callback(data, null);
@@ -105,10 +106,11 @@ function getMeteoByCity(city, callback){
 }
 
 function getMeteoByCoordinates(lat, lon, callback){
+    proxy = "https://cors-anywhere.herokuapp.com/"
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&APPID=" + API_KEY,
+        url: proxy + "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&APPID=" + API_KEY,
         headers: {
-            'Access-Control-Allow-Origin': '*'
+            "x-requested-with": "xhr"
         },
         success: function(data){
             callback(data, null);
