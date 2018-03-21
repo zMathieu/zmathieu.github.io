@@ -93,6 +93,7 @@ function getMeteoByCity(city, callback){
     $.ajax({
         url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=" + API_KEY,
         dataType: 'json',
+        crossDomain: true,
         success: function(data){
             callback(data, null);
         },
@@ -106,6 +107,7 @@ function getMeteoByCoordinates(lat, lon, callback){
     $.ajax({
         url: "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&APPID=" + API_KEY,
         dataType: 'json',
+        crossDomain: true,
         success: function(data){
             callback(data, null);
         },
