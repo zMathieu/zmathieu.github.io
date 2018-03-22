@@ -99,6 +99,7 @@ $("#geolocation").click(function (event) {
 function getMeteoByCity(city, callback){
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=" + API_KEY,
+        type: 'GET',
         headers: {
             "x-requested-with": "xhr"
         },
@@ -114,6 +115,7 @@ function getMeteoByCity(city, callback){
 function getMeteoByCoordinates(lat, lon, callback){
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&APPID=" + API_KEY,
+        type: 'GET',
         headers: {
             "x-requested-with": "xhr"
         },
